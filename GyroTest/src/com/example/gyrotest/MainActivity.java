@@ -23,6 +23,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         sManager = (SensorManager) getSystemService(SENSOR_SERVICE);  
         
     }
+    
     @Override  
     protected void onResume()  
     {  

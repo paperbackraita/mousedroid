@@ -14,21 +14,25 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements SensorEventListener {
 	private TextView tv;
 	private SensorManager sManager;
+	private Sensor gyroscope;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.tv);
-        sManager = (SensorManager) getSystemService(SENSOR_SERVICE);  
+        sManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        gyroscope = sManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         
     }
     
-    @Override  
+    @SuppressWarnings("deprecation")
+	@Override  
     protected void onResume()  
     {  
         super.onResume();  
-        sManager.registerListener(this, sManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),SensorManager.SENSOR_DELAY_FASTEST);  
+        sManager.registerListener(this, gyroscope ,SensorManager.SENSOR_DELAY_FASTEST);
+        
     }  
   
     @Override  
@@ -45,14 +49,16 @@ public class MainActivity extends Activity implements SensorEventListener {
     @Override  
     public void onSensorChanged(SensorEvent event)  
     {  
-        if (event.accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE)  
+        if (event.sensor.getType() == Sensor.TYPE_ORIENTATION)
+    	{if (event.accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE)  
         {  
             return;  
         }  
   
         tv.setText("Orientation X :"+ Float.toString(event.values[2]) +"\n"+  
                    "Orientation Y :"+ Float.toString(event.values[1]) +"\n"+  
-                   "Orientation Z :"+ Float.toString(event.values[0]));  
+                   "Orientation Z :"+ Float.toString(event.values[0]));
+    	}
     }  
 
 

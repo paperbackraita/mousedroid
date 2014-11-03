@@ -126,7 +126,7 @@ public class MainActivity extends ActionBarActivity {
 			try {
 				toServer = socket.getOutputStream();
 			} catch (IOException err) {
-				// Do nothing.
+				view.setText("Error getting Output Stream: " + err);
 			}
 		}
 		
@@ -135,7 +135,7 @@ public class MainActivity extends ActionBarActivity {
 				// TODO :: Insert the Data Collection part and send the data in a loop, (with some fixed frequency?)
 				toServer.write("Sukrit".getBytes());
 			} catch (IOException err) {
-				// Do nothing.
+				view.setText("Error writing to the client: " + err);
 			}
 		}
 	}

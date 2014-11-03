@@ -7,9 +7,9 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
-    
+
     <uses-permission android:name="android.permission.BLUETOOTH" />
- 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +24,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <service
+            android:name=".DataCollection"
+            android:label="@string/title_activity_data_collection" >
+        </service>
+
+        <activity
+            android:name=".DataCollection"
+            android:label="@string/title_activity_data_collection" >
         </activity>
     </application>
 

@@ -66,6 +66,7 @@ public class MainActivity extends ActionBarActivity {
 			// Connect to the device.
 			ConnectToDevice connect = new ConnectToDevice(pairedDevice);
 			connect.run();
+			connect.disconnect();
 			
 		}
 	}
@@ -98,10 +99,21 @@ public class MainActivity extends ActionBarActivity {
 			try {
 				socket.connect();
 			} catch (IOException err) {
-				view.setText("Error making a connection " + err);
+				view.setText("Error making a connection: " + err);
 			}
 			AfterConnect connected = new AfterConnect(socket);
 			connected.run();
+		}
+		
+		/**
+		 * Disconnects the socket.
+		 */
+		public void disconnect() {
+			try {
+				socket.close();
+			} catch (IOException err) {
+				view.setText("Error closing the socket: " + err);
+			}
 		}
 	}
 	

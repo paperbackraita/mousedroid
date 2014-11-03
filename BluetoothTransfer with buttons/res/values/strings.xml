@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BluetoothTransfer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="LEFT_BUTTON_TEXT">LEFT</string>
+	<string name="RIGHT_BUTTON_TEXT">RIGHT</string>
+</resources>

@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	BluetoothAdapter adapter; // The default adapter.
+	TextView view = null; // For errors.
 	final int REQUEST_ENABLE_BT_SUCCESS = 1; // Successfull Bluetooth enable.
 	
 	@Override
@@ -28,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		// Find the Bluetooth Adapter.
 		adapter = BluetoothAdapter.getDefaultAdapter();
-		TextView view = (TextView) findViewById(R.id.textView1);
+		view = (TextView) findViewById(R.id.textView1);
 		// Does Bluetooth exist?
 		if (adapter == null) {
 			// Adapter was not found. No Bluetooth possibly.
@@ -74,30 +75,20 @@ public class MainActivity extends ActionBarActivity {
 	 * @author sukrit
 	 */
 	private class ConnectToDevice extends Thread {
-		// Send data serially to the device. Standard String for serial communication.
-		private final UUID serialUUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+		// Send data serially to the device. Unique UUID.
+		private final UUID mouseDroidUUID = UUID.fromString("3DD7E793-C461-4FAE-B715-12E8940A0975");
 		private BluetoothSocket socket; // Socket for the communication.
-		private final int PORT = 20;
 		
 		/**
 		 * Constructor which requires an instance of the device to connect to.
 		 * @param pairedDevice The device to connect to.
 		 */
 		public ConnectToDevice(BluetoothDevice pairedDevice) {
-			socket = null;
-			Method m = null;
-			
 			try {
-				m = pairedDevice.getClass().getMethod("createInsecureRfcommSocket", new Class[] {int.class});
-			} catch (NoSuchMethodException e) {
-				return;
+				socket = pairedDevice.createRfcommSocketToServiceRecord(mouseDroidUUID);
+			} catch (IOException e) {
+				view.setText("Error connecting to the paired device: " + e);
 			}
-			
-			try {
-				socket = (BluetoothSocket) m.invoke(pairedDevice, PORT);
-			} catch (IllegalAccessException e) {} 
-			catch (IllegalArgumentException e) {} 
-			catch (InvocationTargetException e) {}
 		}
 		
 		/**
@@ -107,7 +98,7 @@ public class MainActivity extends ActionBarActivity {
 			try {
 				socket.connect();
 			} catch (IOException err) {
-				return;
+				view.setText("Error making a connection " + err);
 			}
 			AfterConnect connected = new AfterConnect(socket);
 			connected.run();

@@ -21,6 +21,8 @@ public class MainActivity extends ActionBarActivity {
 	BluetoothAdapter adapter; // The default adapter.
 	TextView view = null; // For errors.
 	final int REQUEST_ENABLE_BT_SUCCESS = 1; // Successfull Bluetooth enable.
+	private final UUID mouseDroidUUID = UUID.fromString("3DD7E793-C461-4FAE-B715-12E8940A0975");
+		// UUID for Bluetooth connections.
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,8 +78,7 @@ public class MainActivity extends ActionBarActivity {
 	 * @author sukrit
 	 */
 	private class ConnectToDevice extends Thread {
-		// Send data serially to the device. Unique UUID.
-		private final UUID mouseDroidUUID = UUID.fromString("3DD7E793-C461-4FAE-B715-12E8940A0975");
+		
 		private BluetoothSocket socket; // Socket for the communication.
 		
 		/**
@@ -137,27 +138,6 @@ public class MainActivity extends ActionBarActivity {
 				// Do nothing.
 			}
 		}
-	}
-	
-	
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 	
 	// Helper Functions.

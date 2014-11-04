@@ -1,0 +1,8 @@
+# cache for current jar dependency. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1415038063000 520038 4a3c67dee4051a6bb47c877c6115ba4b1a246afb /home/mridul/Android/adt-bundle-linux-x86_64-20140702/sdk/extras/android/support/v7/appcompat/libs/android-support-v7-appcompat.jar
+1415038063000 520038 4a3c67dee4051a6bb47c877c6115ba4b1a246afb /home/mridul/workspaces/Android_workspace/appcompat_v7/libs/android-support-v7-appcompat.jar
+1415038063000 987314 9b6a9a9078af571732159b904ad423b03b7cc786 /home/mridul/workspaces/Android_workspace/appcompat_v7/libs/android-support-v4.jar
+1415077554000 987314 9b6a9a9078af571732159b904ad423b03b7cc786 /home/mridul/workspaces/Android_workspace/BluetoothTransfer/libs/android-support-v4.jar
+1415038063000 987314 9b6a9a9078af571732159b904ad423b03b7cc786 /home/mridul/Android/adt-bundle-linux-x86_64-20140702/sdk/extras/android/support/v7/appcompat/libs/android-support-v4.jar

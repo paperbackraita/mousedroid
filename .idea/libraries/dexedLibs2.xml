@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="dexedLibs2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/BluetoothTransfer with buttons/bin/dexedLibs/android-support-v4-1363ceb291e0733c4326e2c524ddcba9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/BluetoothTransfer with buttons/bin/dexedLibs/android-support-v7-appcompat-8d99fb4fd75c699ea88295606273cf39.jar!/" />
+      <root url="jar://$PROJECT_DIR$/BluetoothTransfer with buttons/bin/dexedLibs/android-support-v4-e7968e1544ef5a79f0b78c6c66e86d2a.jar!/" />
+      <root url="jar://$PROJECT_DIR$/BluetoothTransfer with buttons/bin/dexedLibs/appcompat_v7-257ce32a7a40d96e76e0b88d0f3ed4d8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/BluetoothTransfer with buttons/bin/dexedLibs/android-support-v7-appcompat-318e21dc1d94ffb66143118dd8ea3666.jar!/" />
+      <root url="jar://$PROJECT_DIR$/BluetoothTransfer with buttons/bin/dexedLibs/appcompat_v7-de2a1bcce3fa4c5861b300f1427c4b45.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

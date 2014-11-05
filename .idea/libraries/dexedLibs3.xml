@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="dexedLibs3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bluetooth_discover/Mc_Project/bin/dexedLibs/android-support-v7-appcompat-b555da8f0a40fb02fd117d8a01784570.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bluetooth_discover/Mc_Project/bin/dexedLibs/appcompat_v7-a8478a81e7607fb54df879210d28dc3c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bluetooth_discover/Mc_Project/bin/dexedLibs/android-support-v4-08a4d980d3459e4f8d06d7aac8eed051.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
